@@ -38,8 +38,9 @@ variables:
 trigger:
 - main
 
-pool:
-  vmImage: 'ubuntu-latest'
+# pool:
+#   vmImage: 'ubuntu-latest'
+pool: AZP-Pool
 
 stages:
 - stage: Stage1
