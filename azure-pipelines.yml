@@ -1,0 +1,65 @@
+# devops: hello world
+
+parameters:
+  - name: MODE
+    displayName: Running Test or Prod mode 
+    default: 'TEST'
+    type: string
+    values: 
+      - 'TEST'
+      - 'RPOD'
+  - name: OS
+    displayName: Choose an operation system or both for automation
+    default: 'Both'
+    values: 
+      - 'Both'
+      - 'Linux'
+      - 'Windows'
+  - name: WINDOWS_TID
+    displayName: Windows Template Job ID  
+    type: number
+    default: 438
+  - name: LINUX_TID
+    type: number
+    displayName: Linux Template Job ID  
+    default: 439
+
+
+# Set variables
+variables:
+  pester_path: 'C:\PesterTest'
+  devops_path: 'C:\devops'
+  buildsheet_name: 'TestMM1 - WgHS Azure Build v1.0'
+  OS: ${{ parameters.OS }}
+  LINUXTID: ${{ parameters.LINUX_TID }}
+  WINTID: ${{ parameters.WINDOWS_TID }}
+  TEST: ${{ parameters.MODE }}
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Stage1
+  displayName: Stage 1
+  jobs:
+  - job: variables
+    displayName: Show variables
+    steps: 
+    - ${{ each parameter in parameters }}:
+      - script: echo ${{ parameter.Key }} ":" ${{ parameter.Value }} 
+
+- stage: Stage2
+  displayName: Stage 2
+  jobs:
+  - job: process
+    displayName: checking the os process
+    steps: 
+    - ${{ if in( variables['OS'], 'Both', 'Linux' ) }}:
+      - script: |
+          echo "Running Linux..."
+    - ${{ if in( variables['OS'], 'Both', 'Windows' ) }}:
+      - script: |
+          echo "Running Windows..."
