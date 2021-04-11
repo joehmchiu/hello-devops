@@ -19,10 +19,14 @@ parameters:
     displayName: Windows Template Job ID  
     type: number
     default: 438
+    values:
+      - 438
   - name: LINUX_TID
     type: number
     displayName: Linux Template Job ID  
     default: 439
+    values:
+      - 439
 
 
 # Set variables
