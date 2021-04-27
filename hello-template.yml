@@ -3,12 +3,5 @@ parameters:
     type: string
     default: 'N/A'
 
-trigger:
-- main
-
-# pool:
-#   vmImage: 'ubuntu-latest'
-pool: AZP-Pool
-
 steps:
   - script: echo ${{ parameters.testParam }}
