@@ -1,0 +1,6 @@
+parameters:
+  - name: testParam
+    type: string
+    default: 'N/A'
+steps:
+  - script: echo ${{ parameters.testParam }}
