@@ -1,0 +1,13 @@
+parameters:
+  - name: testParam
+    type: string
+    default: 'N/A'
+trigger:
+- main
+# pool:
+#   vmImage: 'ubuntu-latest'
+pool: AZP-Pool
+extends:
+  template: -template.yaml
+  parameters:
+    testParam: ${{ parameters.testParam }}
