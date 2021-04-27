@@ -9,6 +9,5 @@ trigger:
 pool: AZP-Pool
 extends:
   template: hello-template.yml
-  
   parameters:
     testParam: ${{ parameters.testParam }}
