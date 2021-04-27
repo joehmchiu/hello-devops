@@ -8,6 +8,6 @@ trigger:
 #   vmImage: 'ubuntu-latest'
 pool: AZP-Pool
 extends:
-  template: -template.yaml
+  template: hello-template.yaml
   parameters:
     testParam: ${{ parameters.testParam }}
