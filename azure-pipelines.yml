@@ -61,6 +61,7 @@ variables:
   LINUXTID: ${{ parameters.LINUX_TID }}
   WINTID: ${{ parameters.WINDOWS_TID }}
   TEST: ${{ parameters.MODE }}
+  group: "hello-001"
 
 trigger:
 - main
@@ -77,7 +78,7 @@ stages:
     displayName: Show variables
     steps: 
     - ${{ each parameter in parameters }}:
-      - script: echo ${{ parameter.Key }} ":" ${{ parameter.Value }} 
+      - script: echo ${{ parameter.Key }} ":" ${{ parameter.Value }} ":" $(foo)
 
 - stage: Stage2
   displayName: Stage 2
