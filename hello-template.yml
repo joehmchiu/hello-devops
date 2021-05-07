@@ -6,6 +6,15 @@ parameters:
 # steps:
 #   - script: echo ${{ parameters.testParam }}
 
+jobs:
+- job: build_Oregon
+  variables:
+  - group: hello-001
+  steps:
+    - script: |
+        echo $foo
+        echo $hello
+      displayName: 'Show Variable Values'
 - job: build_Oregon
   variables:
   - group: hello-001
