@@ -9,6 +9,6 @@ trigger:
 pool: AZP-Pool
 extends:
   template: group-template.yml
-  parameters:
-    testParam: ${{ parameters.testParam }}
+#   parameters:
+#     testParam: ${{ parameters.testParam }}
 
