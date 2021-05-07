@@ -7,7 +7,7 @@ parameters:
 #   - script: echo ${{ parameters.testParam }}
 
 jobs:
-- job: build_Oregon
+- job: foo_bar
   variables:
   - group: hello-001
   steps:
@@ -15,7 +15,7 @@ jobs:
         echo $foo
         echo $hello
       displayName: 'Show Variable Values'
-- job: build_Oregon
+- job: show_me
   variables:
   - group: hello-001
   steps:
