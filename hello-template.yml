@@ -3,5 +3,14 @@ parameters:
     type: string
     default: 'N/A'
 
-steps:
-  - script: echo ${{ parameters.testParam }}
+# steps:
+#   - script: echo ${{ parameters.testParam }}
+
+- job: build_Oregon
+  variables:
+  - group: hello-001
+  steps:
+    - script: |
+        echo $foo
+        echo $hello
+      displayName: 'Show Variable Values'
