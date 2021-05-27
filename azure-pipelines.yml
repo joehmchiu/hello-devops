@@ -1,6 +1,13 @@
 # devops: hello world
 
 parameters:
+  - name: POOL
+    displayName: Agent Pool Option
+    default: 'AZP-Agent2'
+    type: string
+    values: 
+      - 'AZP-Agent2'
+      - 'AZP-Pool'
   - name: MODE
     displayName: Running Test or Prod mode 
     default: 'TEST'
