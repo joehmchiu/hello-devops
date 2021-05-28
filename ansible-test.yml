@@ -29,7 +29,7 @@ stages:
     - job: checkout_hello_devops
       displayName: Checkout repo and run ansible playbook
       steps:
-        - checkout: hello-devopus
+        - checkout: self
           displayName: 'Checkout hello-devops'
 
         - script: |
