@@ -34,6 +34,6 @@ stages:
 
         - script: |
             echo $(Build.SourcesDirectory)
-          workingDirectory: '$(Build.SourcesDirectory)'
+          workingDirectory: '$(Build.SourcesDirectory)/hello-devops'
           displayName: 'list all files'
 
