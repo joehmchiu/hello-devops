@@ -1,5 +1,5 @@
 - name: ansible test for devops
-  hosts: mac
+  hosts: macfoo
   tasks:
   - name: hello world
     debug:
