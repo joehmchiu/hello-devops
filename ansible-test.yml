@@ -1,0 +1,39 @@
+# devops: hello world
+
+parameters:
+  - name: POOL
+    displayName: Azure DevOps Agent Pool 
+    default: 'AZP-Pool'
+    type: string
+    values: 
+      - 'AZP-Pool'
+      - 'AZP-Agent2'
+
+# Set variables
+variables:
+  path: '/tmp'
+
+resources:
+  repositories:
+  - repository: hello-devops
+    type: github
+    endpoint: joehmchiu
+    name: joehmchiu/hello-devops
+    ref: main
+
+stages:
+- stage: Stage1_Checkout_Repo
+  displayName: Check out hello-devops repo
+  pool: ${{ parameters.POOL }}
+  jobs:
+    - job: checkout_hello_devops
+      displayName: Checkout repo and run ansible playbook
+      steps:
+        - checkout: hello-devopus
+          displayName: 'Checkout hello-devops'
+
+        - script: |
+            /bin/ls -lrth
+          workingDirectory: '$(Build.SourcesDirectory)/hello-devops/'
+          displayName: 'list all files'
+
