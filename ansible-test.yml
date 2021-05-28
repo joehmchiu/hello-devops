@@ -30,5 +30,5 @@ stages:
       displayName: Checkout repo and run ansible playbook
       steps:
         - checkout: self
-          path: 's/test'
+          path: 's/snow-cmdb/test'
         - script: echo "Hello world"
