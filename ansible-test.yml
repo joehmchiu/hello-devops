@@ -29,9 +29,4 @@ stages:
     - job: checkout_hello_devops
       displayName: Checkout repo and run ansible playbook
       steps:
-        - script: |
-            /bin/bash
-            dir
-            pwd
-            echo '$(Agent.BuildDirectory)'
-            echo '$(System.DefaultWorkingDirectory)'
+        - script: echo "Hello world"
