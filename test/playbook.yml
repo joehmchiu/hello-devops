@@ -1,0 +1,9 @@
+- name: ansible test for devops
+  hosts: mac
+  tasks:
+  - name: hello world
+    debug:
+      msg: "Hello world!"
+  - name: output to log
+    shell: echo "Hello world - $(date +'%T %F')" >> /tmp/foo.log
+
