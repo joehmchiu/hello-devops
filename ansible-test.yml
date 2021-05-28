@@ -13,7 +13,6 @@ parameters:
 variables:
   path: '/tmp'
 
-
 pool: ${{ parameters.POOL }}
 
 steps:
