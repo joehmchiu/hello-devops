@@ -11,3 +11,5 @@ jobs:
       pwd
       echo '$(Agent.BuildDirectory)'
       echo '$(System.DefaultWorkingDirectory)'
+  - script: |
+      ls -R
