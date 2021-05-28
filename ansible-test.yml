@@ -5,4 +5,9 @@ jobs:
   pool: AZP-Pool
 #    vmImage: 'ubuntu-18.04'
   steps:
-  - script: echo "hello world!" >> /tmp/foo.log
+  - script: echo "hello world - $(date +'%T %F')!" >> /tmp/foo.log
+  - script: |
+      dir
+      pwd
+      echo '$(Agent.BuildDirectory)'
+      echo '$(System.DefaultWorkingDirectory)'
