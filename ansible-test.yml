@@ -35,5 +35,3 @@ stages:
         - script: |
           dir
           pwd
-          echo '$(Agent.BuildDirectory)'
-          echo '$(System.DefaultWorkingDirectory)'
