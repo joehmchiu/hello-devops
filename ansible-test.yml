@@ -30,6 +30,7 @@ stages:
       displayName: Checkout repo and run ansible playbook
       steps:
         - script: |
+            /bin/bash
             dir
             pwd
             echo '$(Agent.BuildDirectory)'
