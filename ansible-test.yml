@@ -33,7 +33,7 @@ stages:
           displayName: 'Checkout hello-devops'
 
         - script: |
-            echo $(Build.SourcesDirectory)
-          workingDirectory: '$(Build.SourcesDirectory)/hello-devops'
+            echo "hello world"
+          workingDirectory: '$(Build.SourcesDirectory)/test'
           displayName: 'list all files'
 
