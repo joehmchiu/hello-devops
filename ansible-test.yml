@@ -13,22 +13,18 @@ parameters:
 variables:
   path: '/tmp'
 
-resources:
-  repositories:
-  - repository: hello-devops
-    type: github
-    endpoint: joehmchiu
-    name: joehmchiu/hello-devops
-    ref: main
 
-stages:
-- stage: Stage1_Checkout_Repo
-  displayName: Check out hello-devops repo
-  pool: ${{ parameters.POOL }}
-  jobs:
-    - job: checkout_hello_devops
-      displayName: Checkout repo and run ansible playbook
-      steps:
-        - checkout: self
-          path: 's/snow-cmdb/test'
-        - script: echo "Hello world"
+pool: ${{ parameters.POOL }}
+
+steps:
+- script: date /t
+  displayName: Get the date
+- script: dir
+  workingDirectory: $(Agent.BuildDirectory)
+  displayName: List contents of a folder
+- script: |
+    set MYVAR=foo
+    set
+  displayName: Set a variable and then display all
+  env:
+    aVarFromYaml: someValue
