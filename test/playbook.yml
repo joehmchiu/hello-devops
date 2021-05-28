@@ -5,5 +5,5 @@
     debug:
       msg: "Hello world!"
   - name: output to log
-      shell: echo "Hello world - $(date +'%T %F')" >> /tmp/foo.log
+    shell: echo "Hello world - $(date +'%T %F')" >> /tmp/foo.log
 
