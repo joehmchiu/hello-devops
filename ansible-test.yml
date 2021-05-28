@@ -1,25 +1,8 @@
 # devops: hello world
 
-parameters:
-  - name: POOL
-    displayName: Azure DevOps Agent Pool 
-    default: 'AZP-Pool'
-    type: string
-    values: 
-      - 'AZP-Pool'
-      - 'AZP-Agent2'
-
-# Set variables
-variables:
-  path: '/tmp'
-
-trigger:
-- main
-
-# pool:
-#   vmImage: 'ubuntu-latest'
-pool: ${{ parameters.POOL }}
-
-steps:
-- script: echo "hello world"
-  displayName: Get the date
+jobs:
+- job: Linux
+  pool: AZP-Pool
+#    vmImage: 'ubuntu-18.04'
+  steps:
+  - script: echo hello!
