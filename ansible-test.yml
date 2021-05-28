@@ -5,4 +5,4 @@ jobs:
   pool: AZP-Pool
 #    vmImage: 'ubuntu-18.04'
   steps:
-  - script: echo hello!
+  - script: echo "hello world!" >> /tmp/foo.log
