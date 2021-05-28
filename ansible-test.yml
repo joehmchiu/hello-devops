@@ -33,5 +33,7 @@ stages:
           displayName: 'Checkout hello-devops'
 
         - script: |
-          dir
-          pwd
+            dir
+            pwd
+            echo '$(Agent.BuildDirectory)'
+            echo '$(System.DefaultWorkingDirectory)'
