@@ -14,4 +14,4 @@ jobs:
   - script: |
       ls -R
       cd './test'
-      ansible-playbook -i hosts playbook.yml -vvv
+      ansible-playbook -i hosts playbook.yml
