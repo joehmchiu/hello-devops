@@ -21,8 +21,5 @@ trigger:
 pool: ${{ parameters.POOL }}
 
 steps:
-- script: date /t
+- script: echo "hello world"
   displayName: Get the date
-- script: dir
-  workingDirectory: $(Agent.BuildDirectory)
-  displayName: List contents of a folder
