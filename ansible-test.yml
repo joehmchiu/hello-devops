@@ -29,4 +29,6 @@ stages:
     - job: checkout_hello_devops
       displayName: Checkout repo and run ansible playbook
       steps:
+        - checkout: self
+          path: 's/snow-cmdb'
         - script: echo "Hello world"
