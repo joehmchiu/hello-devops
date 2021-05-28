@@ -13,6 +13,11 @@ parameters:
 variables:
   path: '/tmp'
 
+trigger:
+- main
+
+# pool:
+#   vmImage: 'ubuntu-latest'
 pool: ${{ parameters.POOL }}
 
 steps:
