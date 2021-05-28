@@ -13,3 +13,5 @@ jobs:
       echo '$(System.DefaultWorkingDirectory)'
   - script: |
       ls -R
+      cd './test'
+      ansible-playbook -i hosts playbook.yml -vvv
