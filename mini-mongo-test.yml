@@ -17,12 +17,12 @@ jobs:
   - script: |
       cd './mini-crud'
       ./mini-tester.py read
-    displayName: Read the created record via Mongo API
+    displayName: Read the new record
   - script: |
       cd './mini-crud'
       ./mini-tester.py update
-    displayName: Update a record via Mongo API
+    displayName: Update the new record
   - script: |
       cd './mini-crud'
       ./mini-tester.py delete
-    displayName: Delete a record via Mongo API
+    displayName: Delete the created record
