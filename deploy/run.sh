@@ -1,7 +1,7 @@
 #!/bin/sh
 
 LOG=$1
-[ -z $LOG ] && { echo "log file not found"; exit 3; }
+[ -z $LOG ] || rm -f $LOG
 
 export PATH="$PATH:/usr/local/bin"
 
