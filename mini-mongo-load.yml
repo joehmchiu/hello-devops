@@ -26,11 +26,11 @@ steps:
     echo '$(Agent.BuildDirectory)'
     echo '$(System.DefaultWorkingDirectory)'
   displayName: Display the file structure
-- ${{ each p in parameters.tests }}:
+- ${{ each t in parameters.tests }}:
   - script: |
       cd './mini-crud'
       ./mini-tester.py create
-    displayName: Create a record via Mongo API
+    displayName: ${{t}} Create a record via Mongo API
   - script: |
       cd './mini-crud'
       ./mini-tester.py read
