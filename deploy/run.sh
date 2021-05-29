@@ -1,5 +1,8 @@
 #!/bin/sh
 
+LOG=$1
+[ -z $LOG ] && { echo "log file not found"; exit 3; }
+
 export PATH="$PATH:/usr/local/bin"
 
 workdir=/Users/joechiu/demo/mongo-api
@@ -7,7 +10,7 @@ nn=0
 
 function say {
   ((nn=$nn+1))
-  echo "$nn. $1"
+  echo "$nn. $1" >> $LOG
 }
 say "stop minikube"
 minikube stop

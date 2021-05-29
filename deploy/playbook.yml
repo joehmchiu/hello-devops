@@ -12,5 +12,5 @@
       dest: "{{tmp}}/{{run}}"
       mode: '0755'
   - name: build mongo api image and deploy to the kubernetes cluster
-    shell: "/usr/bin/nohup {{tmp}}/{{run}}"
+    shell: "/usr/bin/nohup {{tmp}}/{{run}} {{logfile}}"
 
