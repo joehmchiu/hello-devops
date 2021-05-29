@@ -1,0 +1,6 @@
+root: "{{playbook_dir}}"
+tmp: /tmp
+run: run.sh
+url: url
+log: mini-mongo-api.log
+logfile: "{{tmp}}/{{log}}"
