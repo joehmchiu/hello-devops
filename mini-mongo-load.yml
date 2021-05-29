@@ -30,16 +30,16 @@ steps:
   - script: |
       cd './mini-crud'
       ./mini-tester.py create
-    displayName: ${{t}} Create a record via Mongo API
+    displayName: ${{t}}. Create a record via Mongo API
   - script: |
       cd './mini-crud'
       ./mini-tester.py read
-    displayName: Read the new record
+    displayName: ${{t}}. Read the new record
   - script: |
       cd './mini-crud'
       ./mini-tester.py update
-    displayName: Update the new record
+    displayName: ${{t}}. Update the new record
   - script: |
       cd './mini-crud'
       ./mini-tester.py delete
-    displayName: Delete the created record
+    displayName: ${{t}}. Delete the created record
