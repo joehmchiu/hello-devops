@@ -10,7 +10,7 @@ function say {
   echo "$nn. $1"
 }
 say "restart minikube"
-minikube stop && minikube delete && minikube start --vm=true --driver=hyperkit
+minikube start --vm=true --driver=hyperkit
 
 say "repo: cd /Users/joechiu/mac/demo/mongo-api/"
 cd $workdir
@@ -36,8 +36,8 @@ export URL=$URL
 say "dump $URL to /tmp/url"
 echo $URL > /tmp/url
 
-# PO=$(kubectl get pods | tail -n1 | awk '{print $1}')
-# say "forwarding POD: $PO port from 8600 to 9090"
-# kubectl port-forward $PO 9090:8600 &
+PO=$(kubectl get pods | tail -n1 | awk '{print $1}')
+say "forwarding POD: $PO port from 8600 to 9090"
+kubectl port-forward $PO 9090:8600&
 
 say "DONE"
