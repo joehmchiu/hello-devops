@@ -17,11 +17,8 @@ parameters:
   - 11
   - 12
 
-steps:
-- ${{ each p in parameters.param }}:
-  - script: echo ${{ p }}
-
 pool: AZP-Pool
+
 steps:
 - script: |
     dir
