@@ -4,14 +4,13 @@ jobs:
 - job: Linux
   pool: AZP-Pool
   steps:
-  - script: echo "hello world - $(date +'%T %F')!" >> /tmp/foo.log
   - script: |
       dir
       pwd
       echo '$(Agent.BuildDirectory)'
       echo '$(System.DefaultWorkingDirectory)'
+    displayName: display the file structure
   - script: |
-      ls -R
       cd './deploy'
       ansible-playbook -i hosts playbook.yml
-  
+    displayName: run playbook to deploy mini mongo api
