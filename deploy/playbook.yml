@@ -1,7 +1,7 @@
 - name: test 
   hosts: mac
   tasks: 
-  - shell: echo "[$(date +'%T %F')] cleanup artifacts" >> "{{logfile}}"
+  - shell: echo "[$(date +'%F %T')] cleanup artifacts" >> "{{logfile}}"
   - name: remove the artifacts
     file:
       path: "{{tmp}}/{{url}}"

@@ -10,7 +10,7 @@ nn=0
 
 function say {
   ((nn=$nn+1))
-  echo "$nn. $1" >> $LOG
+  echo "[$(date +'%F %T')] $nn. $1" >> $LOG
 }
 say "stop minikube"
 minikube stop
