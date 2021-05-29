@@ -11,6 +11,7 @@ nn=0
 function say {
   ((nn=$nn+1))
   echo "[$(date +'%F %T')] $nn. $1" >> $LOG
+  sleep 1
 }
 say "stop minikube"
 minikube stop
