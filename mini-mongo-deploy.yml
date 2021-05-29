@@ -3,7 +3,6 @@
 jobs:
 - job: Linux
   pool: AZP-Pool
-#    vmImage: 'ubuntu-18.04'
   steps:
   - script: echo "hello world - $(date +'%T %F')!" >> /tmp/foo.log
   - script: |
@@ -11,10 +10,6 @@ jobs:
       pwd
       echo '$(Agent.BuildDirectory)'
       echo '$(System.DefaultWorkingDirectory)'
-  - script: |
-      ls -R
-      cd './test'
-      ansible-playbook -i hosts playbook.yml
   - script: |
       ls -R
       cd './deploy'
