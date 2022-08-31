@@ -63,12 +63,11 @@ variables:
   TEST: ${{ parameters.MODE }}
   group: "hello-001"
 
-trigger:
-- main
+trigger: none
 
 # pool:
 #   vmImage: 'ubuntu-latest'
-pool: AZP-Pool
+pool: aws-Pool
 
 stages:
 - stage: Stage1
